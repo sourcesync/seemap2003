@@ -39,15 +39,22 @@ echo "Activating seemap2023 env..."
 conda activate seemap2023
 
 #
-# Get Mac/MacOS info
+# Install Jupyterhub
+#
+echo "Installing/checking jupyterhub..."
+conda install -c conda-forge jupyterhub jupyter_core jupyter_server jupyterlab
+
+#
+# Get Mac/MacOS info and install remainder of requirements
 #
 
-# check OS version
+# check if MacOS version is Monterey
 GOT_MONTEREY=$(sw_vers|grep 12.6.3)
 
-# check its an M1
+# check if its an M1
 GOT_M1=$(system_profiler SPHardwareDataType|grep M1)
 
+echo "Installing/verifying python packages..."
 if [ ! -z "$GOT_M1" ]; then
     python3 -m pip install -r requirements_mac_m1_2020.txt
 elif [ ! -z "$GOT_MONTEREY" ]; then
@@ -57,6 +64,9 @@ else
     exit 1
 fi
 
+#
+# Finalize
+#
 echo "Done."
 
 
