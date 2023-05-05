@@ -114,3 +114,18 @@ Before the workshop begins:
 * propogate sudo to screen command
 * precache datasets
 * test without any WAN on router
+* finish transfer pytorch model to NANO section in notebook
+* stress test (virtual ips on client laptop?)
+* conda activate in workshop login
+* explore the jupyterhub sqlite dbase for format
+* fix "sudo -X" and opencv high window support on Nano
+* add dataset copy/unpack to script
+* create thumb drive/cloud backup
+* complete dagsurv experiments
+* put a hardware limits section in this readme
+* investigate mars images for fine-tuning notebook
+* figure out yolo compatibility in nano
+* figure out python torch compatibility in nano
+* figure out factor reset in nano
+* fix opencv highgui/namedwindow issue
+
