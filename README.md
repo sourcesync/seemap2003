@@ -116,4 +116,5 @@ Before the workshop begins:
 * test without any WAN on router
 * finish transfer pytorch model to NANO section in notebook
 * stress test (virtual ips on client laptop?)
-
+* conda activate in workshop login
+* explore the jupyterhub sqlite dbase for format
