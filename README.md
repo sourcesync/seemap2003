@@ -80,7 +80,7 @@ If there is public internet, you can run these instructions.
 * Login to the admin account and connect a mac-mini to the public internet
 * Clone this repository to the home directory
 * cd into the "seemap2023" folder and run the "./install.sh" script
-# It will indicate success at the end, otherwise consult the troubleshooting directions below
+* It will indicate success at the end, otherwise consult the troubleshooting directions below
 
 ### Jetson NANO(s)
 
