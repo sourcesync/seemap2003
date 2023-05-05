@@ -110,6 +110,7 @@ Before the workshop begins:
 
 # TODO
 
+* nbconvert load test
 * custom authenticator based on MAC address list
 * intelligent load-balancing across mac-minis
 * get dataset for hardware/machine failure prediction
