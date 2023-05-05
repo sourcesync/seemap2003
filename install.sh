@@ -9,7 +9,7 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=1
+MAX_USERS=5
 
 # Uncomment this to execute this script verbosely
 #set -x 
@@ -47,7 +47,7 @@ GOT_ENV=$(conda env list|grep seemap2023)
 if [ -z "$GOT_ENV" ]
 then
     echo "Installing conda seemap2023 env..."
-    # conda create -n seemap2023 python=3.8
+    conda create -n seemap2023 python=3.8
     source ~/.zshrc
 else
     echo "Found conda seemap20233 env..."
@@ -61,7 +61,7 @@ conda activate seemap2023
 # Install Jupyterhub
 #
 echo "Installing/checking jupyterhub..."
-#conda install -c conda-forge jupyterhub jupyter_core jupyter_server jupyterlab
+conda install -c conda-forge jupyterhub jupyter_core jupyter_server jupyterlab
 
 #
 # Get Mac/MacOS info and install remainder of requirements
@@ -77,11 +77,11 @@ echo "Installing/verifying python packages..."
 if [ ! -z "$GOT_M1" ]
 then
     echo "installing python requirements..."
-    #python3 -m pip install -r requirements_mac_m1_2020.txt
+    python3 -m pip install -r requirements_mac_m1_2020.txt
 elif [ ! -z "$GOT_MONTEREY" ]
 then
     echo "installing python requirements..."
-    #python3 -m pip install -r requirements_macos_monterey_12.6.3.txt
+    python3 -m pip install -r requirements_macos_monterey_12.6.3.txt
 else
     echo "ERROR: Unsupported Mac/MacOS environment."
     exit 1
@@ -103,7 +103,7 @@ do
         if [ -d "$USER_DIR" ]
         then
             echo "found $USER_DIR, perform user setup..."
-            # copy notebook and change permissions
+            # copy notebook and change its permissions
             sudo cp 01_seemap2023.ipynb "/Users/$USER/"
             sudo chmod ugo+r "/Users/$USER/01_seemap2023.ipynb"
             sudo chmod ugo-w "/Users/$USER/01_seemap2023.ipynb"

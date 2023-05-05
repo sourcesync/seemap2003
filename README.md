@@ -50,7 +50,7 @@ These instructions will take you through the hardware and software setup from sc
 
 ### Jetson NANO(s)
 
-* If the Jetson NANO((s) are new, make sure to follow the setup guide (choose "seemap2023" as the name/pass of the primary admin account.)
+* If the Jetson NANO((s) are new, make sure to follow the setup guide (choose "workshop" as the name/pass of the primary admin account.)
 * Connect the switch to the router power it up
 * Connect 1 Jetson NANO to the switch via an ethernet cable
 * Power up the Jetson NANO
@@ -69,7 +69,7 @@ This is the likely setup since there won't be public internet:
 
 # Choose a mac-mini and login to the administrator account
 # Insert the thumb drive with the software backup
-# From the thumb drive, copy the "seemapld2023" workshop directory to the home folder
+# From the thumb drive, copy the "seemap2023" workshop directory to the home folder
 # run the "./install.sh" script
 # This will take a few minutes
 # It will indicate success at the end, otherwise consult the troubleshooting directions below
@@ -79,13 +79,13 @@ This is the likely setup since there won't be public internet:
 If there is public internet, you can run these instructions.  
 * Login to the admin account and connect a mac-mini to the public internet
 * Clone this repository to the home directory
-* cd into the "admin" folder and run the "./setup.sh" script
+* cd into the "seemap2023" folder and run the "./install.sh" script
 # It will indicate success at the end, otherwise consult the troubleshooting directions below
 
 ### Jetson NANO(s)
 
 * From the control laptop, "scp" the directory "seemapld20233/nano_workshop" to the "workshop" home directory of each NANO.
-* From the control laptop, login to each NANO and run the script "~/nan_workshop/setup.sh"
+* From the control laptop, login to each NANO and run the script "~/nano_workshop/setup.sh"
 * It will indicate success at the end, otherwise consult the troubleshooting directions below
 * Reboot the NANO
 
@@ -97,10 +97,9 @@ Before the workshop begins:
 * Via the admin laptop, ping all the mac-minis and all the NANOs via their locked down IP addresses
 * Advertise to workshop attendees the router WIFI access point and password
 * On the control laptop, login to a mac-mini
-* cd into "seemapld2023/admin" and run the "launch.sh" script.
-* It will indicate success at the end.
+* cd into "seemap2023" and run the "workshop.sh" script and follow the directions.
 * Repeat for the other mac-mini.
-* Tell the attendees to use their browser and browse to "http://seepmapld2023.net" (no credentials needed)
+* Tell the attendees to use their browser and browse to "http://seepmap2023.net" (no credentials needed)
 
 # Troubleshooting
 
