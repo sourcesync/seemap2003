@@ -1,0 +1,15 @@
+pandas==1.3.5
+numpy==1.21.6
+torch==1.13.1
+tensorflow==2.11.0
+numba==0.51.0
+matplotlib
+scipy
+pycox
+sklearn-pandas
+jupyterhub
+jupyter_core
+jupyter_server
+jupyterlab
+torch==2.0.0
+torchvision==0.15.1
