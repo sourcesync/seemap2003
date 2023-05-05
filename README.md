@@ -45,7 +45,7 @@ These instructions will take you through the hardware and software setup from sc
 * Connect an ethernet cable to router
 * Via the router admin page, locate the mac-mini and its MAC address
 * Lock it's IP address to 192.168.10.3 (verify the change on the mac-mini)
-* Mkae sure to put a label of the IP address on the mac-mini
+* Make sure to put a label of the IP address on the mac-mini
 * Repeat these step for the other mac-mini but use 192.168.10.4
 
 ### Jetson NANO(s)
@@ -70,7 +70,7 @@ This is the likely setup since there won't be public internet:
 # Choose a mac-mini and login to the administrator account
 # Insert the thumb drive with the software backup
 # From the thumb drive, copy the "seemapld2023" workshop directory to the home folder
-# cd into the "admin" folder and run the "./setup.sh" script
+# run the "./install.sh" script
 # This will take a few minutes
 # It will indicate success at the end, otherwise consult the troubleshooting directions below
 

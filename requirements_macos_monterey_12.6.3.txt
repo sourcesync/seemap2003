@@ -7,3 +7,7 @@ matplotlib
 scipy
 pycox
 sklearn-pandas
+jupyterhub
+jupyter_core
+jupyter_server
+jupyterlab
