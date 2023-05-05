@@ -114,3 +114,6 @@ Before the workshop begins:
 * propogate sudo to screen command
 * precache datasets
 * test without any WAN on router
+* finish transfer pytorch model to NANO section in notebook
+* stress test (virtual ips on client laptop?)
+
