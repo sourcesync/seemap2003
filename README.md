@@ -118,3 +118,4 @@ Before the workshop begins:
 * stress test (virtual ips on client laptop?)
 * conda activate in workshop login
 * explore the jupyterhub sqlite dbase for format
+* fix "sudo -X" and opencv high window support on Nano
