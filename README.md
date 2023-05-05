@@ -132,4 +132,5 @@ Before the workshop begins:
 * figure out python torch compatibility in nano
 * figure out factor reset in nano
 * fix opencv highgui/namedwindow issue
+* add model/network diagrams into notebook instead of text
 
