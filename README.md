@@ -119,3 +119,9 @@ Before the workshop begins:
 * conda activate in workshop login
 * explore the jupyterhub sqlite dbase for format
 * fix "sudo -X" and opencv high window support on Nano
+* add dataset copy/unpack to script
+* create thumb drive/cloud backup
+* complete dagsurv experiments
+* put a hardware limits section in this readme
+* investigate mars images for fine-tuning notebook
+
