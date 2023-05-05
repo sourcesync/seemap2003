@@ -112,3 +112,5 @@ Before the workshop begins:
 * setup scripts for nanoA
 * fix jupyterhub exists logic in workshop.sh script (use netstat)
 * propogate sudo to screen command
+* precache datasets
+* test without any WAN on router
