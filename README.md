@@ -67,12 +67,12 @@ These instructions will take you through the hardware and software setup from sc
 
 This is the likely setup since there won't be public internet:
 
-# Choose a mac-mini and login to the administrator account
-# Insert the thumb drive with the software backup
-# From the thumb drive, copy the "seemap2023" workshop directory to the home folder
-# run the "./install.sh" script
-# This will take a few minutes
-# It will indicate success at the end, otherwise consult the troubleshooting directions below
+* Choose a mac-mini and login to the administrator account
+* Insert the thumb drive with the software backup
+* From the thumb drive, copy the "seemap2023" workshop directory to the home folder
+* run the "./install.sh" script
+* This will take a few minutes
+* It will indicate success at the end, otherwise consult the troubleshooting directions below
 
 #### Setup from the Internet
 
@@ -109,4 +109,6 @@ Before the workshop begins:
 * custom authenticator based on MAC address list
 * intelligent load-balancing across mac-minis
 * get dataset for hardware/machine failure prediction
-* setup scripts for nano
+* setup scripts for nanoA
+* fix jupyterhub exists logic in workshop.sh script (use netstat)
+* propogate sudo to screen command
