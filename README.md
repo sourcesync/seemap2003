@@ -124,4 +124,8 @@ Before the workshop begins:
 * complete dagsurv experiments
 * put a hardware limits section in this readme
 * investigate mars images for fine-tuning notebook
+* figure out yolo compatibility in nano
+* figure out python torch compatibility in nano
+* figure out factor reset in nano
+* fix opencv highgui/namedwindow issue
 
