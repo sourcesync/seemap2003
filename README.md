@@ -4,7 +4,11 @@ Welcome to the code and presentation materials repository for the practical ML t
 
 You will find here:
 * All the presentation materials
-* The jupyter notebooks for the tutorial/workshop
+  * [01 Intro And Survival Analysis ML](01_Intro_And_Survival_Analysis_ML.pdf)
+  * [03 AI Hardware, Pytorch, and Computer Vision](03_AI_Hardware_PyTorch_And_Computer_Vision.pdf)
+* The jupyter notebooks
+  * [02 Coding Part I](02_seemapld2023.ipynb)
+  * [04 Coding Part II](04_seemapld2023.ipynb)
 * Setup and management scripts for the workshop machines
 * Hardware setup instructions for the workshop
 
