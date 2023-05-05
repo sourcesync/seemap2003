@@ -1,12 +1,12 @@
 # Introduction
 
-Welcome to the code and preseentation materials repository for the practical ML tutorial for SEEEMAPL 2023.  
+Welcome to the code and presentation materials repository for the practical ML tutorial for SEEEMAPL 2023.  
 
 You will find here:
 * All the presentation materials
 * The jupyter notebooks for the tutorial/workshop
 * Setup and management scripts for the workshop machines
-* Hardware setup for the workshop
+* Hardware setup instructions for the workshop
 
 # Requirements
 
@@ -104,4 +104,9 @@ Before the workshop begins:
 # Troubleshooting
 
 
+# TODO
 
+* custom authenticator based on MAC address list
+* intelligent load-balancing across mac-minis
+* get dataset for hardware/machine failure prediction
+* setup scripts for nano
