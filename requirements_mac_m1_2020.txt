@@ -3,3 +3,10 @@ pycox==0.2.3
 torch==1.13.1
 sklearn-pandas==2.2.0
 tensorflow-macos==2.12.0
+jupyterhub
+jupyter_core
+jupyter_server
+jupyterlab
+torch==2.0.0
+torchvision==0.15.1
+
