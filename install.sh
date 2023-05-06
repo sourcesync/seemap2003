@@ -9,13 +9,13 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=5
+MAX_USERS=10
 
 # Uncomment this to execute this script verbosely
 #set -x 
 
 # Uncomment this to terminate this script on first error
-#set -e 
+set -e 
 
 ####################
 #
@@ -43,7 +43,9 @@ fi
 
 # check for existing conda env
 echo "Checking conda seemap2023 env..."
+set +e
 GOT_ENV=$(conda env list|grep seemap2023)
+set -e
 if [ -z "$GOT_ENV" ]
 then
     echo "Installing conda seemap2023 env..."
@@ -68,10 +70,14 @@ conda install -c conda-forge jupyterhub jupyter_core jupyter_server jupyterlab
 #
 
 # check if MacOS version is Monterey
+set +e
 GOT_MONTEREY=$(sw_vers|grep 12.6.3)
+set -e
 
 # check if its an M1
+set +e
 GOT_M1=$(system_profiler SPHardwareDataType|grep M1)
+set -e
 
 echo "Installing/verifying python packages..."
 if [ ! -z "$GOT_M1" ]
@@ -104,11 +110,10 @@ do
         then
             echo "found $USER_DIR, perform user setup..."
             # copy notebook and change its permissions
-            sudo cp 01_seemap2023.ipynb "/Users/$USER/"
-            sudo chmod ugo+r "/Users/$USER/01_seemap2023.ipynb"
-            sudo chmod ugo-w "/Users/$USER/01_seemap2023.ipynb"
-            sudo cp -fr images "/Users/$USER/"
-            ls -als "/Users/$USER"
+            sudo cp *.ipynb *.py $USER_DIR/
+            sudo chmod ugo+r $USER_DIR/*.ipynb $USER_DIR/*.py
+            sudo chmod ugo-w $USER_DIR/*.ipynb $USER_DIR/*.py
+            sudo cp -fr images $USER_DIR/
         fi    
         echo $USER
     fi
