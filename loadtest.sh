@@ -9,7 +9,7 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=15
+MAX_USERS=25
 
 # the notebook to load test
 NOTEBOOK="02_seemapld2023.ipynb"

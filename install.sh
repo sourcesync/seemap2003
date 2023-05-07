@@ -9,10 +9,10 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=15
+MAX_USERS=25
 
 # Uncomment this to execute this script verbosely
-set -x 
+#set -x 
 
 # Uncomment this to terminate this script on first error
 set -e 
@@ -63,10 +63,12 @@ conda activate seemap2023
 # Install Jupyterhub
 #
 echo "Installing/checking jupyterhub..."
-conda install -c conda-forge jupyterhub
-conda install -c conda-forge jupyter_core
-conda install -c conda-forge jupyter_server
-conda install -c conda-forge jupyterlab
+
+# Note these are separate to avoid long resolver (?)
+conda install -q -c conda-forge jupyterhub
+conda install -q -c conda-forge jupyter_core
+conda install -q -c conda-forge jupyter_server
+conda install -q -c conda-forge jupyterlab
 
 #
 # Get Mac/MacOS info and install remainder of requirements
@@ -86,11 +88,11 @@ echo "Installing/verifying python packages..."
 if [ ! -z "$GOT_M1" ]
 then
     echo "installing python requirements..."
-    python3 -m pip install -r requirements_mac_m1_2020.txt
+    python3 -m pip install --quiet -r requirements_mac_m1_2020.txt
 elif [ ! -z "$GOT_MONTEREY" ]
 then
     echo "installing python requirements..."
-    python3 -m pip install -r requirements_macos_monterey_12.6.3.txt
+    python3 -m pip install --quiet -r requirements_macos_monterey_12.6.3.txt
 else
     echo "ERROR: Unsupported Mac/MacOS environment."
     exit 1
