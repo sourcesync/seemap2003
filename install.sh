@@ -98,8 +98,11 @@ else
     exit 1
 fi
 
+# henceforth we need sudo
+sudo echo "Verifying and syncing workshop users (${MAX_USERS})"
+
 #
-# add/verify workshop users
+# add/verify/sync software/data to  workshop users
 #
 for i in {1..$MAX_USERS}
 do
@@ -114,11 +117,15 @@ do
         if [ -d "$USER_DIR" ]
         then
             echo "found $USER_DIR, perform user setup..."
-            # copy notebook and change its permissions
-            sudo cp *.ipynb *.py $USER_DIR/
+            # cleanup first
+            rm -f $USER_DIR/.ipynb $USER_DIR/*.py
+            # copy workshop files and change permissions as needed
+            sudo cp *.ipynb survival_analysis.py $USER_DIR/
             sudo chmod ugo+r $USER_DIR/*.ipynb $USER_DIR/*.py
             sudo chmod ugo-w $USER_DIR/*.ipynb $USER_DIR/*.py
             sudo cp -fr images $USER_DIR/
+            sudo cp -fr data $USER_DIR/
+            sudo chmodd ugo+rw $USER_DIR/data
         fi    
         echo $USER
     fi

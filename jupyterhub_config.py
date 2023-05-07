@@ -192,6 +192,7 @@ c = get_config()  #noqa
 #          This is the address on which the proxy will bind.
 #          Sets protocol, ip, base_url
 #  Default: 'http://:8000'
+#GW
 c.JupyterHub.bind_url = 'http://:80'
 
 ## Whether to shutdown the proxy when the Hub shuts down.
@@ -282,8 +283,8 @@ c.JupyterHub.bind_url = 'http://:80'
 # c.JupyterHub.custom_scopes = {}
 
 ## The location of jupyterhub data files (e.g. /usr/local/share/jupyterhub)
-#  Default: '/Users/gwilliams/Projects/SEEMAP2023/venv/seemap2023/share/jupyterhub'
-# c.JupyterHub.data_files_path = '/Users/gwilliams/Projects/SEEMAP2023/venv/seemap2023/share/jupyterhub'
+#  Default: '/Users/cuongwilliams/miniconda3/envs/seemap2023/share/jupyterhub'
+# c.JupyterHub.data_files_path = '/Users/cuongwilliams/miniconda3/envs/seemap2023/share/jupyterhub'
 
 ## Include any kwargs to pass to the database connection.
 #          See sqlalchemy.create_engine for details.
@@ -602,6 +603,8 @@ c.JupyterHub.bind_url = 'http://:80'
 ## Set the log level by value or name.
 #  See also: Application.log_level
 # c.JupyterHub.log_level = 30
+# GW
+c.JupyterHub.log_level = 40
 
 ## 
 #  See also: Application.logging_config
@@ -1339,6 +1342,8 @@ c.JupyterHub.bind_url = 'http://:80'
 #  Defaults to an empty set, in which case no user has admin access.
 #  Default: set()
 # c.Authenticator.admin_users = set()
+#GW
+c.Authenticator.admin_users = {'cuongwilliams'}
 
 ## Set of usernames that are allowed to log in.
 #  
@@ -1353,6 +1358,8 @@ c.JupyterHub.bind_url = 'http://:80'
 #      `Authenticator.whitelist` renamed to `allowed_users`
 #  Default: set()
 # c.Authenticator.allowed_users = set()
+#GW
+c.Authenticator.allowed_users = {'cuongwilliams', 'workshop_1', 'workshop_2', 'workshop_3', 'workshop_4', 'workshop_5', 'workshop_7', 'workshop_8', 'workshop_9', 'workshop_10', 'workshop_11', 'workshop_12', 'workshop_13', 'workshop_14', 'workshop_15', 'workshop_16', 'workshop_17', 'workshop_18', 'workshop_19', 'workshop_20', 'workshop_21', 'workshop_22', 'workshop_23', 'workshop_24', 'workshop_25'}
 
 ## The max age (in seconds) of authentication info
 #          before forcing a refresh of user auth info.
@@ -1525,5 +1532,5 @@ c.JupyterHub.bind_url = 'http://:80'
 # c.CryptKeeper.keys = []
 
 ## The number of threads to allocate for encryption
-#  Default: 4
-# c.CryptKeeper.n_threads = 4
+#  Default: 8
+# c.CryptKeeper.n_threads = 8
