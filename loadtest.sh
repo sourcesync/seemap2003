@@ -9,7 +9,7 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=10
+MAX_USERS=15
 
 # the notebook to load test
 NOTEBOOK="02_seemapld2023.ipynb"
@@ -64,11 +64,16 @@ sudo echo "Launching $MAX_USERS notebooks for load test..."
 for i in {1..$MAX_USERS}
 do
     USER="workshop_$i"
+    echo "$USER"
     NBIN="/Users/workshop_$i/$NOTEBOOK"
-    NBOUT="$DTDIR/workshop_$i_$(date +%s)_$NOTEBOOK.html"
+    DT=$(date +%s)
+    echo "$DT"
+    NBOUT="${DTDIR}/${USER}_${DT}_$NOTEBOOK.html"
     echo "Launching notebook for workshop_$i"
     sudo time jupyter nbconvert --debug --to html --execute $NBIN --output $NBOUT >>$LOGF 2>&1 &
 done
+
+tail -f "$LOGF"
 
 echo "Done."
 
