@@ -9,10 +9,10 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=10
+MAX_USERS=15
 
 # Uncomment this to execute this script verbosely
-#set -x 
+set -x 
 
 # Uncomment this to terminate this script on first error
 set -e 
@@ -63,7 +63,10 @@ conda activate seemap2023
 # Install Jupyterhub
 #
 echo "Installing/checking jupyterhub..."
-conda install -c conda-forge jupyterhub jupyter_core jupyter_server jupyterlab
+conda install -c conda-forge jupyterhub
+conda install -c conda-forge jupyter_core
+conda install -c conda-forge jupyter_server
+conda install -c conda-forge jupyterlab
 
 #
 # Get Mac/MacOS info and install remainder of requirements
