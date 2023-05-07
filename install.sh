@@ -118,7 +118,11 @@ do
         then
             echo "found $USER_DIR, perform user setup..."
             # cleanup first
-            sudo rm -fr $USER_DIR/*.ipynb $USER_DIR/*.py $USER_DIR/__pycache__*
+            set +e
+            sudo rm -f $USER_DIR/*.ipynb
+            sudo rm -f $USER_DIR/*.py 
+            sudo rm -r $USER_DIR/__pycache__
+            set -e
             # copy workshop files and change permissions as needed
             sudo cp *.ipynb survival_analysis.py $USER_DIR/
             sudo chmod ugo+r $USER_DIR/*.ipynb $USER_DIR/*.py
