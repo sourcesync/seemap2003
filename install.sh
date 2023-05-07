@@ -9,7 +9,7 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=25
+MAX_USERS=1
 
 # Uncomment this to execute this script verbosely
 #set -x 
@@ -118,14 +118,17 @@ do
         then
             echo "found $USER_DIR, perform user setup..."
             # cleanup first
-            rm -f $USER_DIR/.ipynb $USER_DIR/*.py
+            sudo rm -fr $USER_DIR/*.ipynb $USER_DIR/*.py $USER_DIR/__pycache__*
             # copy workshop files and change permissions as needed
             sudo cp *.ipynb survival_analysis.py $USER_DIR/
             sudo chmod ugo+r $USER_DIR/*.ipynb $USER_DIR/*.py
             sudo chmod ugo-w $USER_DIR/*.ipynb $USER_DIR/*.py
             sudo cp -fr images $USER_DIR/
             sudo cp -fr data $USER_DIR/
-            sudo chmodd ugo+rw $USER_DIR/data
+            sudo chmod -R ugo+rw $USER_DIR/data
+            sudo cp -fr ~/.cache/huggingface $USER_DIR/.cache/
+            sudo cp -fr ~/.cache/torch $USER_DIR/.cache/
+            sudo chmod -R ugo+rw $USER_DIR/.cache
         fi    
         echo $USER
     fi
