@@ -124,6 +124,16 @@ During the workshop:
 * sep notebook for yolo fine tuning - but still need to find which yolo is compat in NANO
 * dockerize to allow for per user resource quotas
 * make a way to restrict running certain compute intensive cells
+* rename NETGEAR to SEEMAP
+* support self-signed cert HTTPS for jupyter
+* cleanup extraneous mini/nano login accounts (may also free up some data)
+* disable crsutil via recovery mode ( https://eshop.macsales.com/blog/74502-boot-an-m1-mac-into-recovery-mode/, https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/ )
+* disable photoanalysisd (https://forums.macrumors.com/threads/high-cpu-consumption-of-photos-processes-photolibraryd-and-photoanalysisd.2376267/)
+* disable FileVault and enable auto-login
+* turn indexing off across reboot (sudo mdutil -i off)
+* fix repeated copy files logic in install.sh and sync.sh
+* test various jupyterhub failure conditions 1) multiple tabs 2) tab remains open across jupyterhub restarts
+* restrict pytorch training via system whitelist
 * nbconvert load tests with looping
 * custom authenticator based on MAC address list
 * intelligent load-balancing across mac-minis
