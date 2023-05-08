@@ -40,7 +40,7 @@ else
     set -e
     if [ -z "$JUPHUB" ]
     then
-        echo "Confirmed process(es) killed.""
+        echo "Confirmed process(es) killed."
     else
         echo "ERROR: There are still jupyterhub processess running"
         exit 1
@@ -70,7 +70,7 @@ else
     for p in `echo $PIDS`
     do
         echo "Trying to kill jupyterhub process at pid=$p"
-        #sudo kill $p
+        sudo kill $p
     done
 
     # confirm process(es) killed
@@ -79,7 +79,7 @@ else
     set -e
     if [ -z "$NODE" ]
     then
-        echo "Confirmed process(es) killed.""
+        echo "Confirmed process(es) killed."
     else
         echo "ERROR: There are still jupyterhub processess running"
         exit 1
