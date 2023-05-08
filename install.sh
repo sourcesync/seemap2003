@@ -9,10 +9,11 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=25
+START_USER=26
+END_USER=50
 
 # Uncomment this to execute this script verbosely
-#set -x 
+set -x 
 
 # Uncomment this to terminate this script on first error
 set -e 
@@ -99,12 +100,12 @@ else
 fi
 
 # henceforth we need sudo
-sudo echo "Verifying and syncing workshop users (${MAX_USERS})"
+sudo echo "Verifying and syncing workshop users (${START_USER} to ${END_USER})"
 
 #
 # add/verify/sync software/data to  workshop users
 #
-for i in {1..$MAX_USERS}
+for i in {$START_USER..$END_USER}
 do
     # TODO: Right now we are just verifying users exist
     # TODO: but eventually this will also create those

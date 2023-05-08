@@ -52,4 +52,15 @@ echo "Cleaning up any previous jupyterhub state..."
 sudo rm -f jupyterhub.sqlite jupyterhub_cookie_secret
 
 echo "Launch jupyterhub..."
-sudo jupyterhub --config=jupyterhub_config.py
+
+HOST=`hostname`
+if [[ "$HOST" == "ShellEVionsMini" ]]
+then
+	sudo jupyterhub --config=jupyter_config_ShellEVionsMini.py
+elif [[ "$HOST" == "Shell-E-Visions-Mac-mini.local" ]]
+	sudo jupyterhub --config=jupyter_config_ShellEVionsMini.py
+else
+	sudo jupyterhub --config=jupyterhub_config.py
+fi
+
+echo "Done."

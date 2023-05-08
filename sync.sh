@@ -2,7 +2,8 @@
 
 # config
 
-MAX_USERS=25
+START_USER=26
+END_USER=50
 
 set -e
 
@@ -14,7 +15,7 @@ set -x
 #
 # add/verify/sync software/data to  workshop users
 #
-for i in {1..$MAX_USERS}
+for i in {$START_USER..$END_USER}
 do
     USER="workshop_$i"
     USER_DIR="/Users/$USER"
