@@ -56,7 +56,6 @@ do
         sudo cp -fr images $USER_DIR/
         sudo cp -fr ../data_transfer/data/* $USER_DIR/data/
         sudo chmod -R ugo+rw $USER_DIR/data
-        sudo cp -fr ../data_transfer/.cache/huggingface $USER_DIR/.cache/
         sudo cp -fr ../data_transfer/.cache/torch $USER_DIR/.cache/
         sudo chmod -R ugo+rw $USER_DIR/.cache
     fi
