@@ -2,6 +2,18 @@
 
 Welcome to the code and presentation materials repository for the practical ML tutorial for SEEEMAPL 2023.  
 
+The workshop will comprise dovetailing presentations and interactive coding sessions.
+
+Participants must come to the tutorial session with a laptop with a browser if they wish to participate in the interactive coding essions.  No installation of software is required.
+
+When attendees arrive they will be told to connect to the workshop WIFI router and browse to an internal server machine which hosts interactive python notebooks.
+
+The workshop instructor will lead them through the coding in the interacitve notebooks, so no prior ML expereience will be required.
+
+All of the software and data is self-contained and will not require participants to connect to the public internet.
+
+# What's In This Repository
+
 You will find here:
 * All the presentation materials
   * [01 Intro And Survival Analysis ML](01_Intro_And_Survival_Analysis_ML.pdf)
@@ -11,6 +23,7 @@ You will find here:
   * [04 Coding Part II](04_seemapld2023.ipynb)
 * Setup and management scripts for the workshop machines
 * Hardware setup instructions for the workshop
+
 
 # Requirements
 
@@ -117,7 +130,24 @@ During the workshop:
 
 # TODO
 
-* nbconvert load test
+* fastai example
+* refactor jupyter intro cells into their own notebook
+* sep scripts for syncing notebooks to user dirs
+* use mars rover images for transfer learning (see the mars rise paper)
+* sep notebook for yolo fine tuning - but still need to find which yolo is compat in NANO
+* dockerize to allow for per user resource quotas
+* make a way to restrict running certain compute intensive cells
+* rename NETGEAR to SEEMAP
+* support self-signed cert HTTPS for jupyter
+* cleanup extraneous mini/nano login accounts (may also free up some data)
+* disable crsutil via recovery mode ( https://eshop.macsales.com/blog/74502-boot-an-m1-mac-into-recovery-mode/, https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/ )
+* disable photoanalysisd (https://forums.macrumors.com/threads/high-cpu-consumption-of-photos-processes-photolibraryd-and-photoanalysisd.2376267/)
+* disable FileVault and enable auto-login
+* turn indexing off across reboot (sudo mdutil -i off)
+* fix repeated copy files logic in install.sh and sync.sh
+* test various jupyterhub failure conditions 1) multiple tabs 2) tab remains open across jupyterhub restarts
+* restrict pytorch training via system whitelist
+* nbconvert load tests with looping
 * custom authenticator based on MAC address list
 * intelligent load-balancing across mac-minis
 * get dataset for hardware/machine failure prediction

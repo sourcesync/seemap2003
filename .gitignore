@@ -7,3 +7,4 @@ jupyterhub_cookie_secret
 jupyterhub-proxy.pid
 data
 data/
+.DS_Store
