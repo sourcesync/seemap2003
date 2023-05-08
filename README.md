@@ -106,8 +106,12 @@ Before the workshop begins:
 * cd into "seemap2023" and run the "screen" command
 * Launch the script "jhub_launch.sh"
 * Repeat for the other mac-mini.
+* You should keep open these terminals to each mac-mini to monitor machines during the workshop
+* Also, its a good idea to open and maintain a remote VNC seession to each mac-mini on the control laptop ( use "Connect To Server" feature using addressees vnc://192.168.2.5:5900 andd vnc://192.168.2.4:5900 )
 * You will need to figure out how to dole account workshop_x accounts to attendees as they arrive
 * Tell the attendees to browse to the IP address of the mac-mini depending on their workshop_x account name
+
+During workshop:
 
 # Troubleshooting
 
