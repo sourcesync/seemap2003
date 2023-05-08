@@ -18,7 +18,7 @@ then
     END_USER=50
 else
     START_USER=1
-    END_USER=2
+    END_USER=1
 fi
 
 # the notebook to load test
