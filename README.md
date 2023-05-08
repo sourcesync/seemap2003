@@ -39,8 +39,7 @@ When you have internet, you should get all the machine's ready with these setup 
 ### Mac-Mini(s)
 
 * If it's a new mac-mini perform a typical setup
-* Login and setup an admin account called "seemap" with the password "m6shooter"
-* Install Docker if its not installed and make sure it restarts on startup
+* Login and setup an admin account called "seemapld" with a secure password.
 * Clone this repo to the home directory
 * Sync to the home directory the data filee seemapld2023.tar.gz from the backup (ie, thumb drive) or cloud directory (TBD)
 * You should configure remote (VNC) login in the settings

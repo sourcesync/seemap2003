@@ -6,16 +6,25 @@
 #
 ######################
 
-# Workshop attendees are mapped to user accounts.
-# Here we establish the per-machine maxium.  
-# Don't change this unless you know what you are doing.
-START_USER=26
-END_USER=50
+# this part determines the workshop users to iterate later on
+HOST=`hostname`
+if [[ "$HOST" == "ShellEVionsMini" ]]
+then
+    START_USER=26
+    END_USER=50
+elif [[ "$HOST" == "Shell-E-Visions-Mac-mini.local" ]]
+then
+    START_USER=26
+    END_USER=50
+else
+    START_USER=1
+    END_USER=25
+fi
 
-# Uncomment this to execute this script verbosely
+# echo script commands
 set -x 
 
-# Uncomment this to terminate this script on first error
+# terminate script on any error
 set -e 
 
 ####################
