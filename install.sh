@@ -9,7 +9,7 @@
 # Workshop attendees are mapped to user accounts.
 # Here we establish the per-machine maxium.  
 # Don't change this unless you know what you are doing.
-MAX_USERS=1
+MAX_USERS=25
 
 # Uncomment this to execute this script verbosely
 #set -x 
