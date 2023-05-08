@@ -58,6 +58,7 @@ if [[ "$HOST" == "ShellEVionsMini" ]]
 then
 	sudo jupyterhub --config=jupyter_config_ShellEVionsMini.py
 elif [[ "$HOST" == "Shell-E-Visions-Mac-mini.local" ]]
+then
 	sudo jupyterhub --config=jupyter_config_ShellEVionsMini.py
 else
 	sudo jupyterhub --config=jupyterhub_config.py

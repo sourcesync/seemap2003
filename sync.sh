@@ -11,6 +11,9 @@ set -x
 
 # script starts
 
+sudo rm -fr ~/.ipython
+sudo rm -fr ~/.jupyter
+
 
 #
 # add/verify/sync software/data to  workshop users
