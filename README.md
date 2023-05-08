@@ -128,6 +128,22 @@ During the workshop:
 * It's a good idea the deattach the "screen" command you launched above (but attach as needed)
 * I recommend running continuous performance monitoring such as "top"
 
+
+# Appendix
+
+## Locking Down Mac-Minis
+
+I recommend you also do the following:
+* Make sure there is an autologin on restart using your admin account
+* Disable FileVault
+* Disable csrutil via ( https://eshop.macsales.com/blog/74502-boot-an-m1-mac-into-recovery-mode/, https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/ )
+* Disable photoanalysisd via https://forums.macrumors.com/threads/high-cpu-consumption-of-photos-processes-photolibraryd-and-photoanalysisd.2376267/, not to get your uid via this command at terminal "echo $UID"
+* Turn off indexing via "sudo mdutil -i off"
+* Disable all aspects of automatic software update
+* I recommend manually performing all software updates before you takee it off public interneet
+* Do a reboot to make sure all of the settings above were permanent
+* Remember to do a final test of the workshop before internet becomes unavailable ( such as at the conference site )
+
 # TODO
 
 * fastai example
@@ -140,10 +156,6 @@ During the workshop:
 * rename NETGEAR to SEEMAP
 * support self-signed cert HTTPS for jupyter
 * cleanup extraneous mini/nano login accounts (may also free up some data)
-* disable crsutil via recovery mode ( https://eshop.macsales.com/blog/74502-boot-an-m1-mac-into-recovery-mode/, https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/ )
-* disable photoanalysisd (https://forums.macrumors.com/threads/high-cpu-consumption-of-photos-processes-photolibraryd-and-photoanalysisd.2376267/)
-* disable FileVault and enable auto-login
-* turn indexing off across reboot (sudo mdutil -i off)
 * fix repeated copy files logic in install.sh and sync.sh
 * test various jupyterhub failure conditions 1) multiple tabs 2) tab remains open across jupyterhub restarts
 * restrict pytorch training via system whitelist
