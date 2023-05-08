@@ -38,26 +38,41 @@ When you have internet, you should get all the machine's ready with these setup 
 
 ### Mac-Mini(s)
 
+( These setup instructions assume you will be putting the machine on the public internet somehow. )
+
 * If it's a new mac-mini perform a typical setup
 * Login and setup an admin account called "seemapld" with a secure password.
 * Clone this repo to the home directory
-* Sync to the home directory the data filee seemapld2023.tar.gz from the backup (ie, thumb drive) or cloud directory (TBD)
+* Sync to the home directory the data file data_transfer.tar.gz from the backup (ie, thumb drive) or cloud directory (TBD)
 * You should configure remote (VNC) login in the settings
+* Create standard users named "workshop_1" to "workshop_25" for the first mac-mini at 2.4
+* Create standard users named "workshop_26" to "workshop_50" for the second mac-mini at 2.5
+* Copy the data_transer.tar.gz file to the home directory
+* cd into the cloned repo directory and run ./install.sh script
 
 ### Jetson NANOs
 
-* if it's a new NANO, perform a typical setup
-* Login and setup an admin account called "seemap: with the password "m6shooter"
+( These setup instructions assume you will be putting the machine on the public internet somehow. )
+
+* If it's a new NANO, perform a typical setup
+* Login and setup an admin account called "seemapld" with a secure password.
+* Clone this repo to the home directory
+* Sync to the home directory the data file data_transfer.tar.gz
+* Run the "nano_install.sh" script from the cloned repo directory.
 
 ## Network Setup
+
+( Once you've setup the machines above, you will take them off the internet and follow these instructions. )
 
 ### Nighthawk Netgear Router
 
 * Power on the router and wait for a solid light for the LAN (WAN will not be used.)
-* Connect the administration laptop to the WIFI access point called NIGHTHWAWK (use the default password printed on the touter.)
+* Connect the administration laptop to the WIFI access point called NIGHTHWAWK (use the default password printed on the router.)
 * Browse to the router admin page: routerlogin.net and enter the credentials from the hardware
-* Setup the LAN to allocate dynamic IP address in the range 192.168.10.20-192.168.10.254
-* Locate the entry for the laptop and lock down its IP address to 192.168.10.2
+* Setup the LAN to allocate dynamic IP address in the range 192.168.2.20-192.168.2.254
+* Locate the entry for the laptop and lock down its IP address to 192.168.2.2
+* Do not put the router on the internet (ie, nothing connected to WAN )
+* Extend the router with the swtich (as needed)
 
 ### Mac-Mini(s)
 
@@ -65,51 +80,20 @@ When you have internet, you should get all the machine's ready with these setup 
 * Login using the adminitrator account ( or setup your mac-mini if it's new )
 * Connect an ethernet cable to router
 * Via the router admin page, locate the mac-mini and its MAC address
-* Lock it's IP address to 192.168.10.3 (verify the change on the mac-mini)
+* Lock it's IP address to 192.168.2.4 (verify the change on the mac-mini)
 * Make sure to put a label of the IP address on the mac-mini
-* Repeat these step for the other mac-mini but use 192.168.10.4
+* Repeat these step for the other mac-mini but use 192.168.2.5
 
 
 ### Jetson NANO(s)
 
-* If the Jetson NANO((s) are new, make sure to follow the setup guide (choose "workshop" as the name/pass of the primary admin account.)
-* Connect the switch to the router power it up
+* Connect to the router (or switch as needed) 
 * Connect 1 Jetson NANO to the switch via an ethernet cable
 * Power up the Jetson NANO
 * In the router admin interface, make sure you see the NANO
-* Lock down its IP address to 192.168.10.5 (verify the change on the NANO and the laptop)
+* Lock down its IP address to 192.168.2.6 (verify the change on the NANO and the laptop)
 * Make sure to put a label of the IP address on the NANO
 * Repeat these step for the other NANOs, incrementing the IP address as you go
-
-## Software Setup
-
-### Mac-Mini(s)
-
-#### Setup From thumb drive backup
-
-This is the likely setup since there won't be public internet:
-
-* Choose a mac-mini and login to the administrator account
-* Insert the thumb drive with the software backup
-* From the thumb drive, copy the "seemap2023" workshop directory to the home folder
-* run the "./install.sh" script
-* This will take a few minutes
-* It will indicate success at the end, otherwise consult the troubleshooting directions below
-
-#### Setup from the Internet
-
-If there is public internet, you can run these instructions.  
-* Login to the admin account and connect a mac-mini to the public internet
-* Clone this repository to the home directory
-* cd into the "seemap2023" folder and run the "./install.sh" script
-* It will indicate success at the end, otherwise consult the troubleshooting directions below
-
-### Jetson NANO(s)
-
-* From the control laptop, "scp" the directory "seemapld20233/nano_workshop" to the "workshop" home directory of each NANO.
-* From the control laptop, login to each NANO and run the script "~/nano_workshop/setup.sh"
-* It will indicate success at the end, otherwise consult the troubleshooting directions below
-* Reboot the NANO
 
 ## Launch the Workshop
 
@@ -118,13 +102,16 @@ Before the workshop begins:
 * Make sure all the hardware is powered on and status lights are steady/postive
 * Via the admin laptop, ping all the mac-minis and all the NANOs via their locked down IP addresses
 * Advertise to workshop attendees the router WIFI access point and password
-* On the control laptop, login to a mac-mini
-* cd into "seemap2023" and run the "workshop.sh" script and follow the directions.
+* On the control laptop, login to each mac-mini
+* cd into "seemap2023" and run the "screen" command
+* Launch the script "jhub_launch.sh"
 * Repeat for the other mac-mini.
-* Tell the attendees to use their browser and browse to "http://seepmap2023.net" (no credentials needed)
+* You will need to figure out how to dole account workshop_x accounts to attendees as they arrive
+* Tell the attendees to browse to the IP address of the mac-mini depending on their workshop_x account name
 
 # Troubleshooting
 
+TBD
 
 # TODO
 
