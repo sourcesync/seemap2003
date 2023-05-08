@@ -6,13 +6,23 @@
 #
 ######################
 
-# Workshop attendees are mapped to user accounts.
-# Here we establish the per-machine maxium.  
-# Don't change this unless you know what you are doing.
-MAX_USERS=25
+# this part determines the workshop users to iterate later on
+HOST=`hostname`
+if [[ "$HOST" == "ShellEVionsMini" ]]
+then
+    START_USER=26
+    END_USER=50
+elif [[ "$HOST" == "Shell-E-Visions-Mac-mini.local" ]]
+then
+    START_USER=26
+    END_USER=50
+else
+    START_USER=1
+    END_USER=1
+fi
 
 # the notebook to load test
-NOTEBOOK="02_seemapld2023.ipynb"
+NOTEBOOK="04_seemapld2023.ipynb"
 
 # Uncomment this to execute this script verbosely
 set -x 
@@ -59,9 +69,9 @@ echo "results dir $DTDIR"
 LOGF="$DTDIR/log.txt"
 echo "log file at $LOGF"
 
-sudo echo "Launching $MAX_USERS notebooks for load test..."
+sudo echo "Launching ${START_USER}...${END_USER} notebooks for load test..."
 
-for i in {1..$MAX_USERS}
+for i in {$START_USER..$END_USER}
 do
     USER="workshop_$i"
     echo "$USER"
