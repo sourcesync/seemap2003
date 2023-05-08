@@ -45,3 +45,5 @@ do
         sudo rm -fr $USER_DIR/.jupyter
     fi
 done
+
+echo "Done."
