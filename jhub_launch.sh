@@ -36,7 +36,7 @@ fi
 #
 
 set +e
-NODE=$(ps -ef|grep -v grep|grep node)
+NODE=$(ps -ef|grep -v grep|grep node|grep http-proxy)
 set -e
 
 if [ -z "$NODE" ]

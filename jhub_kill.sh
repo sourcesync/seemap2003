@@ -53,7 +53,7 @@ fi
 #
 
 set +e
-NODE=$(ps -ef|grep -v grep|grep node)
+NODE=$(ps -ef|grep -v grep|grep node|grep http-proxy)
 set -e
 
 if [ -z "$NODE" ]
@@ -64,7 +64,7 @@ else
     echo "Found $NUM instances..."
 
     # Get the process ids
-    PIDS=$(ps -ef|grep -v grep|grep node|awk '{ print $2 }')
+    PIDS=$(ps -ef|grep -v grep|grep node|grep http-proxy|awk '{ print $2 }')
 
     # Kill them
     for p in `echo $PIDS`
@@ -75,7 +75,7 @@ else
 
     # confirm process(es) killed
     set +e
-    NODE=$(ps -ef|grep -v grep|grep node)
+    NODE=$(ps -ef|grep -v grep|grep node|grep http-proxy)
     set -e
     if [ -z "$NODE" ]
     then
