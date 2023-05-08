@@ -32,6 +32,24 @@ This tutorial/workshop requires the following:
 
 These instructions will take you through the hardware and software setup from scratch.  Some steps may be skipped if the machines were setup already.
 
+## Device Setup
+
+When you have internet, you should get all the machine's ready with these setup instructions.
+
+### Mac-Mini(s)
+
+* If it's a new mac-mini perform a typical setup
+* Login and setup an admin account called "seemap" with the password "m6shooter"
+* Install Docker if its not installed and make sure it restarts on startup
+* Clone this repo to the home directory
+* Sync to the home directory the data filee seemapld2023.tar.gz from the backup (ie, thumb drive) or cloud directory (TBD)
+* You should configure remote (VNC) login in the settings
+
+### Jetson NANOs
+
+* if it's a new NANO, perform a typical setup
+* Login and setup an admin account called "seemap: with the password "m6shooter"
+
 ## Network Setup
 
 ### Nighthawk Netgear Router
@@ -51,6 +69,7 @@ These instructions will take you through the hardware and software setup from sc
 * Lock it's IP address to 192.168.10.3 (verify the change on the mac-mini)
 * Make sure to put a label of the IP address on the mac-mini
 * Repeat these step for the other mac-mini but use 192.168.10.4
+
 
 ### Jetson NANO(s)
 
