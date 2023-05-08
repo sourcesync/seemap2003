@@ -111,11 +111,9 @@ Before the workshop begins:
 * You will need to figure out how to dole account workshop_x accounts to attendees as they arrive
 * Tell the attendees to browse to the IP address of the mac-mini depending on their workshop_x account name
 
-During workshop:
-
-# Troubleshooting
-
-TBD
+During the workshop:
+* It's a good idea the deattach the "screen" command you launched above (but attach as needed)
+* I recommend running continuous performance monitoring such as "top"
 
 # TODO
 
