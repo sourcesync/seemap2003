@@ -1359,7 +1359,7 @@ c.Authenticator.admin_users = {'cuongwilliams'}
 #  Default: set()
 # c.Authenticator.allowed_users = set()
 #GW
-c.Authenticator.allowed_users = {'cuongwilliams', 'workshop_1', 'workshop_2', 'workshop_3', 'workshop_4', 'workshop_5', 'workshop_7', 'workshop_8', 'workshop_9', 'workshop_10', 'workshop_11', 'workshop_12', 'workshop_13', 'workshop_14', 'workshop_15', 'workshop_16', 'workshop_17', 'workshop_18', 'workshop_19', 'workshop_20', 'workshop_21', 'workshop_22', 'workshop_23', 'workshop_24', 'workshop_25'}
+c.Authenticator.allowed_users = {'cuongwilliams', 'workshop_26', 'workshop_27', 'workshop_28', 'workshop_29', 'workshop_30', 'workshop_31', 'workshop_32', 'workshop_33', 'workshop_34', 'workshop_35', 'workshop_36', 'workshop_37', 'workshop_38', 'workshop_39', 'workshop_40', 'workshop_41', 'workshop_42', 'workshop_43', 'workshop_44', 'workshop_45', 'workshop_46', 'workshop_47', 'workshop_48', 'workshop_49', 'workshop_50'}
 
 ## The max age (in seconds) of authentication info
 #          before forcing a refresh of user auth info.
