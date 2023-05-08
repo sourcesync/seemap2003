@@ -2,6 +2,18 @@
 
 Welcome to the code and presentation materials repository for the practical ML tutorial for SEEEMAPL 2023.  
 
+The workshop will comprise dovetailing presentations and interactive coding sessions.
+
+Participants must come to the tutorial session with a laptop with a browser if they wish to participate in the interactive coding essions.  No installation of software is required.
+
+When attendees arrive they will be told to connect to the workshop WIFI router and browse to an internal server machine which hosts interactive python notebooks.
+
+The workshop instructor will lead them through the coding in the interacitve notebooks, so no prior ML expereience will be required.
+
+All of the software and data is self-contained and will not require participants to connect to the public internet.
+
+# What's In This Repository
+
 You will find here:
 * All the presentation materials
   * [01 Intro And Survival Analysis ML](01_Intro_And_Survival_Analysis_ML.pdf)
@@ -11,6 +23,7 @@ You will find here:
   * [04 Coding Part II](04_seemapld2023.ipynb)
 * Setup and management scripts for the workshop machines
 * Hardware setup instructions for the workshop
+
 
 # Requirements
 
