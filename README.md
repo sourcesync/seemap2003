@@ -117,7 +117,14 @@ During the workshop:
 
 # TODO
 
-* nbconvert load test
+* fastai example
+* refactor jupyter intro cells into their own notebook
+* sep scripts for syncing notebooks to user dirs
+* use mars rover images for transfer learning (see the mars rise paper)
+* sep notebook for yolo fine tuning - but still need to find which yolo is compat in NANO
+* dockerize to allow for per user resource quotas
+* make a way to restrict running certain compute intensive cells
+* nbconvert load tests with looping
 * custom authenticator based on MAC address list
 * intelligent load-balancing across mac-minis
 * get dataset for hardware/machine failure prediction
