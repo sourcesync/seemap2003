@@ -36,6 +36,10 @@ sudo cp -fr ../data_transfer/mnist_png.tgz $USER_DIR/.fastai/archive/ $USER_DIR/
 sudo tar zxf ../data_transfer/mnist_png.tgz -C $USER_DIR/.fastai/data/
 sudo cp -f ../data_transfer/config.ini $USER_DIR/.fastai/
 sudo chmod -R ugo+rw $USER_DIR/.fastai
-sudo chown -R $USER /Users/workshop_1/.fastai
+sudo chown -R $USER $USER_DIR/.fastai
+sudo chgrp -R staff $USER_DIR/.fastai
+sudo chmod -R ugo+rw $USER_DIR/.cache
+sudo chown -R $USER $USER_DIR/.cache
+sudo chgrp -R staff $USER_DIR/.cache
 
 exit 0

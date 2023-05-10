@@ -14,7 +14,7 @@ then
     END_USER=50
 else
     START_USER=1
-    END_USER=1
+    END_USER=25
 fi
 
 # quit on any script error
@@ -40,6 +40,6 @@ do
     if [ -d "$USER_DIR" ]
     then
         echo "found $USER_DIR, perform user setup..."
-        user_sync.sh $USER $USER_DIR
+        ./user_sync.sh $USER $USER_DIR
     fi
 done
