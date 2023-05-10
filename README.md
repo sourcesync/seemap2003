@@ -151,12 +151,10 @@ I recommend you also do the following:
 
 # TODO
 
-* fastai example
 * refactor jupyter intro cells into their own notebook
-* sep scripts for syncing notebooks to user dirs
 * use mars rover images for transfer learning (see the mars rise paper)
-* sep notebook for yolo fine tuning - but still need to find which yolo is compat in NANO
 * dockerize to allow for per user resource quotas
+* support MLP for MNIST training ( HF? custom NN module? )
 * make a way to restrict running certain compute intensive cells
 * rename NETGEAR to SEEMAP
 * support self-signed cert HTTPS for jupyter
