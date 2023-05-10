@@ -155,10 +155,14 @@ I recommend you also do the following:
 * use mars rover images for transfer learning (see the mars rise paper)
 * dockerize to allow for per user resource quotas
 * support MLP for MNIST training ( HF? custom NN module? )
+* nchan=1 optimization for fastai nb?
 * make a way to restrict running certain compute intensive cells
 * rename NETGEAR to SEEMAP
+* pre-made post-its with logins
+* scripts to progressivly add/remove notebooks during workshop
 * support self-signed cert HTTPS for jupyter
 * cleanup extraneous mini/nano login accounts (may also free up some data)
+* sync jupyter settings
 * disable notebook autosave
 * fix repeated copy files logic in install.sh and sync.sh
 * test various jupyterhub failure conditions 1) multiple tabs 2) tab remains open across jupyterhub restarts
