@@ -58,5 +58,12 @@ do
         sudo chmod -R ugo+rw $USER_DIR/data
         sudo cp -fr ../data_transfer/.cache/torch $USER_DIR/.cache/
         sudo chmod -R ugo+rw $USER_DIR/.cache
+        sudo mkdir -p $USER_DIR/.fastai/archive
+        sudo mkdir -p $USER_DIR/.fastai/data
+        sudo cp -fr ../data_transfer/mnist_png.tgz $USER_DIR/.fastai/archive/ $USER_DIR/.fastai/data/
+        sudo tar zxf ../data_transfer/mnist_png.tgz -C $USER_DIR/.fastai/data/
+        sudo cp -f ../data_transfer/config.ini $USER_DIR/.fastai/
+        sudo chmod -R ugo+rw $USER_DIR/.fastai
+        sudo chown -R $USER /Users/workshop_1/.fastai
     fi
 done
