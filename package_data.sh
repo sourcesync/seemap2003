@@ -17,8 +17,9 @@ mkdir -p ../data_transfer
 
 # Copy data files
 cp -fr ./data ../data_transfer/
-mkdir -p ../data_transfer/.cache
-cp -fr ~/.cache/torch ../data_transfer/.cache/
+mkdir -p ../data_transfer/.cache/torch/hub/checkpoints
+cp -fr ~/.cache/torch/hub/checkpoints/mobilenetv3_small* ../data_transfer/.cache/torch/hub/checkpoints/
+cp -fr ~/.cache/torch/hub/checkpoints/squeeze* ../data_transfer/.cache/torch/hub/checkpoints/
 cp -fr ~/.fastai/archive/mnist_png.tgz ../data_transfer/
 cp -fr ~/.fastai/config.ini ../data_transfer
 
