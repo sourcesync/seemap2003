@@ -15,13 +15,17 @@ set -x
 rm -fr ../data_transfer ../data_transfer.tar ../data_transfer.tar.gz
 mkdir -p ../data_transfer
 
-# Copy data files
+# Copy workspace data files
 cp -fr ./data ../data_transfer/
+# Copy torch cache (models)
 mkdir -p ../data_transfer/.cache/torch/hub/checkpoints
 cp -fr ~/.cache/torch/hub/checkpoints/mobilenetv3_small* ../data_transfer/.cache/torch/hub/checkpoints/
 cp -fr ~/.cache/torch/hub/checkpoints/squeeze* ../data_transfer/.cache/torch/hub/checkpoints/
+# Copy fastai images (tgz only and config.ini)
 cp -fr ~/.fastai/archive/mnist_png.tgz ../data_transfer/
 cp -fr ~/.fastai/config.ini ../data_transfer
+# Copy jupyter configs
+cp ~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings ../data_transfer/
 
 #
 # nano data filee
