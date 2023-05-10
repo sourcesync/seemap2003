@@ -95,6 +95,7 @@ When you have internet, you should get all the machine's ready with these setup 
 * Via the router admin page, locate the mac-mini and its MAC address
 * Lock it's IP address to 192.168.2.4 (verify the change on the mac-mini)
 * Make sure to put a label of the IP address on the mac-mini
+* See additional mac-mini optional setup optimizations in the Appendix below
 * Repeat these step for the other mac-mini but use 192.168.2.5
 
 
@@ -131,7 +132,7 @@ During the workshop:
 
 # Appendix
 
-## Locking Down Mac-Minis
+## Mac-Mini Optional System Optimizations
 
 I recommend you also do the following:
 * Make sure there is an autologin on restart using your admin account
@@ -143,6 +144,10 @@ I recommend you also do the following:
 * I recommend manually performing all software updates before you takee it off public interneet
 * Do a reboot to make sure all of the settings above were permanent
 * Remember to do a final test of the workshop before internet becomes unavailable ( such as at the conference site )
+
+### Jetson NANO Optional System Optimizations
+
+* At terminal, run "docker version" and if you can't see the server version then follow the docker post-installation steps (https://docs.docker.com/engine/install/linux-postinstall/)
 
 # TODO
 
@@ -156,6 +161,7 @@ I recommend you also do the following:
 * rename NETGEAR to SEEMAP
 * support self-signed cert HTTPS for jupyter
 * cleanup extraneous mini/nano login accounts (may also free up some data)
+* disable notebook autosave
 * fix repeated copy files logic in install.sh and sync.sh
 * test various jupyterhub failure conditions 1) multiple tabs 2) tab remains open across jupyterhub restarts
 * restrict pytorch training via system whitelist
@@ -163,14 +169,8 @@ I recommend you also do the following:
 * custom authenticator based on MAC address list
 * intelligent load-balancing across mac-minis
 * get dataset for hardware/machine failure prediction
-* setup scripts for nanoA
-* fix jupyterhub exists logic in workshop.sh script (use netstat)
-* propogate sudo to screen command
-* precache datasets
-* test without any WAN on router
 * finish transfer pytorch model to NANO section in notebook
 * stress test (virtual ips on client laptop?)
-* conda activate in workshop login
 * explore the jupyterhub sqlite dbase for format
 * fix "sudo -X" and opencv high window support on Nano
 * add dataset copy/unpack to script
@@ -183,4 +183,5 @@ I recommend you also do the following:
 * figure out factor reset in nano
 * fix opencv highgui/namedwindow issue
 * add model/network diagrams into notebook instead of text
+* final test without any WAN on router
 
