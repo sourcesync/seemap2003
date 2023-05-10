@@ -19,6 +19,8 @@ mkdir -p ../data_transfer
 cp -fr ./data ../data_transfer/
 mkdir -p ../data_transfer/.cache
 cp -fr ~/.cache/torch ../data_transfer/.cache/
+cp -fr ~/.fastai/archive/mnist_png.tgz ../data_transfer/
+cp -fr ~/.fastai/config.ini ../data_transfer
 
 #
 # nano data filee
@@ -40,10 +42,10 @@ DT=$(date +%s)
 
 # Create mac-mini tarball
 CURDIR=$(pwd)
-cd .. && tar cvf "data_transfer_$DT.tar" data_transfer/ && gzip "data_transfer_$DT.tar" && cd $CURDIR
+cd .. && tar cf "data_transfer_$DT.tar" data_transfer/ && gzip "data_transfer_$DT.tar" && cd $CURDIR
 
 # Create nano tarball
 CURDIR=$(pwd)
-cd .. && tar cvf "data_nano_$DT.tar" data_nano/ && gzip "data_nano_$DT.tar" && cd $CURDIR
+cd .. && tar cf "data_nano_$DT.tar" data_nano/ && gzip "data_nano_$DT.tar" && cd $CURDIR
 
 echo "Created tarballs"
