@@ -33,7 +33,12 @@ sudo chmod -R ugo+rw $USER_DIR/.cache
 sudo mkdir -p $USER_DIR/.fastai/archive
 sudo mkdir -p $USER_DIR/.fastai/data
 sudo cp -fr ../data_transfer/mnist_png.tgz $USER_DIR/.fastai/archive/ $USER_DIR/.fastai/data/
-sudo tar zxf ../data_transfer/mnist_png.tgz -C $USER_DIR/.fastai/data/
+if [ -d $USER_DIR/.fastai/data/mnist_png ]
+then
+    echo "Found mnist_png dir - skipping the unpack, assuming it was already completed"
+else
+    sudo tar zxf ../data_transfer/mnist_png.tgz -C $USER_DIR/.fastai/data/
+fi
 sudo cp -f ../data_transfer/config.ini $USER_DIR/.fastai/
 sudo chmod -R ugo+rw $USER_DIR/.fastai
 sudo chown -R $USER $USER_DIR/.fastai
