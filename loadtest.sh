@@ -18,11 +18,13 @@ then
     END_USER=50
 else
     START_USER=1
-    END_USER=1
+    END_USER=10
 fi
 
 # the notebook to load test
-NOTEBOOK="04_seemapld2023.ipynb"
+#NOTEBOOK="04_seemapld2023.ipynb"
+#NOTEBOOK="02_FastAI_MNIST.ipynb"
+NOTEBOOK="04_seemapld2023_fastai_mnist.ipynb"
 
 # Uncomment this to execute this script verbosely
 set -x 

@@ -95,6 +95,7 @@ When you have internet, you should get all the machine's ready with these setup 
 * Via the router admin page, locate the mac-mini and its MAC address
 * Lock it's IP address to 192.168.2.4 (verify the change on the mac-mini)
 * Make sure to put a label of the IP address on the mac-mini
+* See additional mac-mini optional setup optimizations in the Appendix below
 * Repeat these step for the other mac-mini but use 192.168.2.5
 
 
@@ -128,22 +129,41 @@ During the workshop:
 * It's a good idea the deattach the "screen" command you launched above (but attach as needed)
 * I recommend running continuous performance monitoring such as "top"
 
+
+# Appendix
+
+## Mac-Mini Optional System Optimizations
+
+I recommend you also do the following:
+* Make sure there is an autologin on restart using your admin account
+* Disable FileVault
+* Disable csrutil via ( https://eshop.macsales.com/blog/74502-boot-an-m1-mac-into-recovery-mode/, https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/ )
+* Disable photoanalysisd via https://forums.macrumors.com/threads/high-cpu-consumption-of-photos-processes-photolibraryd-and-photoanalysisd.2376267/, not to get your uid via this command at terminal "echo $UID"
+* Turn off indexing via "sudo mdutil -i off"
+* Disable all aspects of automatic software update
+* I recommend manually performing all software updates before you takee it off public interneet
+* Do a reboot to make sure all of the settings above were permanent
+* Remember to do a final test of the workshop before internet becomes unavailable ( such as at the conference site )
+
+### Jetson NANO Optional System Optimizations
+
+* At terminal, run "docker version" and if you can't see the server version then follow the docker post-installation steps (https://docs.docker.com/engine/install/linux-postinstall/)
+
 # TODO
 
-* fastai example
 * refactor jupyter intro cells into their own notebook
-* sep scripts for syncing notebooks to user dirs
 * use mars rover images for transfer learning (see the mars rise paper)
-* sep notebook for yolo fine tuning - but still need to find which yolo is compat in NANO
 * dockerize to allow for per user resource quotas
+* support MLP for MNIST training ( HF? custom NN module? )
+* nchan=1 optimization for fastai nb?
 * make a way to restrict running certain compute intensive cells
 * rename NETGEAR to SEEMAP
+* pre-made post-its with logins
+* scripts to progressivly add/remove notebooks during workshop
 * support self-signed cert HTTPS for jupyter
 * cleanup extraneous mini/nano login accounts (may also free up some data)
-* disable crsutil via recovery mode ( https://eshop.macsales.com/blog/74502-boot-an-m1-mac-into-recovery-mode/, https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/ )
-* disable photoanalysisd (https://forums.macrumors.com/threads/high-cpu-consumption-of-photos-processes-photolibraryd-and-photoanalysisd.2376267/)
-* disable FileVault and enable auto-login
-* turn indexing off across reboot (sudo mdutil -i off)
+* sync jupyter settings
+* disable notebook autosave
 * fix repeated copy files logic in install.sh and sync.sh
 * test various jupyterhub failure conditions 1) multiple tabs 2) tab remains open across jupyterhub restarts
 * restrict pytorch training via system whitelist
@@ -151,14 +171,8 @@ During the workshop:
 * custom authenticator based on MAC address list
 * intelligent load-balancing across mac-minis
 * get dataset for hardware/machine failure prediction
-* setup scripts for nanoA
-* fix jupyterhub exists logic in workshop.sh script (use netstat)
-* propogate sudo to screen command
-* precache datasets
-* test without any WAN on router
 * finish transfer pytorch model to NANO section in notebook
 * stress test (virtual ips on client laptop?)
-* conda activate in workshop login
 * explore the jupyterhub sqlite dbase for format
 * fix "sudo -X" and opencv high window support on Nano
 * add dataset copy/unpack to script
@@ -171,4 +185,5 @@ During the workshop:
 * figure out factor reset in nano
 * fix opencv highgui/namedwindow issue
 * add model/network diagrams into notebook instead of text
+* final test without any WAN on router
 
