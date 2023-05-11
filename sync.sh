@@ -14,7 +14,7 @@ then
     END_USER=50
 else
     START_USER=1
-    END_USER=25
+    END_USER=1
 fi
 
 # quit on any script error

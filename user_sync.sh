@@ -40,11 +40,17 @@ else
     sudo tar zxf ../data_transfer/mnist_png.tgz -C $USER_DIR/.fastai/data/
 fi
 sudo cp -f ../data_transfer/config.ini $USER_DIR/.fastai/
+# jupyter config
+sudo mkdir -p $USER_DIR/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/
+sudo cp ../data_transfer/themes.jupyterlab-settings $USER_DIR/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/
+# chmods and chowns
 sudo chmod -R ugo+rw $USER_DIR/.fastai
 sudo chown -R $USER $USER_DIR/.fastai
 sudo chgrp -R staff $USER_DIR/.fastai
 sudo chmod -R ugo+rw $USER_DIR/.cache
 sudo chown -R $USER $USER_DIR/.cache
 sudo chgrp -R staff $USER_DIR/.cache
+sudo chown -R $USER $USER_DIR/.jupyter
+sudo chgrp -R staff $USER_DIR/.jupyter
 
 exit 0
