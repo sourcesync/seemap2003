@@ -151,6 +151,7 @@ I recommend you also do the following:
 
 # TODO
 
+* vision_learner warning
 * refactor jupyter intro cells into their own notebook
 * use mars rover images for transfer learning (see the mars rise paper)
 * dockerize to allow for per user resource quotas
