@@ -16,11 +16,12 @@ if __name__ == '__main__':
         splitter=RandomSplitter(valid_pct=0.2, seed=42),
         get_y=parent_label)
 
-    #loaders = block.dataloaders( "../data_nano/mnist_png/training")
-    loaders = block.dataloaders( "/Users/gwilliams/.fastai/data/mnist_png/training")
+    loaders = block.dataloaders( "../data_nano/mnist_png/training")
+    #loaders = block.dataloaders( "/Users/gwilliams/.fastai/data/mnist_png/training")
 
     print("loading model...")
-    pm = torch.load("./data/fastai_mnist.pt") 
+    pm = torch.load("../data_nano/fastai_mnist.pt") 
+    #pm = torch.load("./data/fastai_mnist.pt") 
     #print(type(pm))
     ##for obj in model.state_dict():
     #    print(obj)
