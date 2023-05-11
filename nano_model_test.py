@@ -29,7 +29,7 @@ class_names = image_datasets['val'].classes
 
 if __name__ == '__main__':
 
-    model = torch.load("../data_nano/seemap2023_ft.pt")
+    model = torch.load("../data_nano/fastai_mnist.pt") #seemap2023_ft.pt")
     #sd = torch.load("data/pruned_weights.pth")
     ##print(type(sd))
     #model = torch.nn.Module.load_state_dict(sd)
