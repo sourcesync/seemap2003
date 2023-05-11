@@ -22,7 +22,7 @@ sudo rm -fr $USER_DIR/.ipynb_checkpoints
 set -e
 
 # copy workshop files and change permissions as needed
-sudo cp *.ipynb survival_analysis.py $USER_DIR/
+sudo cp ../data_transfer/*.ipynb survival_analysis.py $USER_DIR/
 sudo chmod ugo+r $USER_DIR/*.ipynb $USER_DIR/*.py
 sudo chmod ugo-w $USER_DIR/*.ipynb $USER_DIR/*.py
 sudo cp -fr images $USER_DIR/
