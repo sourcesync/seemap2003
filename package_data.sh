@@ -15,6 +15,9 @@ set -x
 rm -fr ../data_transfer ../data_transfer.tar ../data_transfer.tar.gz
 mkdir -p ../data_transfer
 
+# Copy notebooks
+cp 02_seemapld2023_survival.ipynb ../data_transfer/
+cp 04_seemapld2023_fastai_mnist.ipynb ../data_transfer/
 # Copy workspace data files
 cp -fr ./data ../data_transfer/
 # Copy torch cache (models)
