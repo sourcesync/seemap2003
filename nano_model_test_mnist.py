@@ -2,7 +2,7 @@ import os
 import sys
 import time
 
-print("Import ml packages...")
+print("Importing ml packages...")
 from fastai.vision.all import *
 import torch
 from torchvision import datasets, models, transforms
@@ -10,7 +10,7 @@ from torchvision import datasets, models, transforms
 
 if __name__ == '__main__':
 
-    print("preparing images...") 
+    print("Preparing images...") 
     block = DataBlock(
         blocks=(ImageBlock, CategoryBlock),
         get_items=get_image_files,
@@ -19,14 +19,14 @@ if __name__ == '__main__':
 
     loaders = block.dataloaders( "/home/mnist_png/training")
 
-    print("loading model...")
-    pm = torch.load("/home/fastai_mnist.pt") 
+    print("Loading model file", sys.argv[1])
+    pm = torch.load( os.path.join("/home/",sys.argv[1]) )
 
-    print("starting inference...")
-    st = time.time()
+    print("Starting inference speed test...")
+    zt = st = ct = time.time()
     total_predictions = 0
 
-    while True:
+    while ( st - zt < 30 ): # do total test for under a min
 
         # load a batch of images
         b = loaders.one_batch()
@@ -43,3 +43,5 @@ if __name__ == '__main__':
             # reset and do again...
             st = time.time()
             total_predictions = 0
+
+    print("Timing test done.")

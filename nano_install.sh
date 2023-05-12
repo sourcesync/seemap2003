@@ -49,5 +49,6 @@ fi
 
 cp -f nano_model_test_mnist.py ~/
 cp -f nano_start.sh ~/
+cp -f nano_model_test.sh ~/
 
 echo "Done."

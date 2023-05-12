@@ -1,5 +1,7 @@
 #!/bin/bash
 
+MODEL=$1
+
 CURDIR=$(pwd)
 
-sudo docker run -it --rm -v $CURDIR:/home -v $PRNT:$PRNT --runtime nvidia --network host t_f
+sudo docker run -it --rm -v $CURDIR:/home -v $PRNT:$PRNT --env MODEL="${MODEL}" --runtime nvidia --network host t_f
