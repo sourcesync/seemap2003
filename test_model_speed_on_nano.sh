@@ -6,7 +6,7 @@ NANO=$2
 
 if [ -f "${MODEL}" ]
 then
-    echo "Found your model "${MODEL}"
+    echo "Found your model ${MODEL}"
     echo
 else
     echo "ERROR: Could not find your model ${MODEL}"
