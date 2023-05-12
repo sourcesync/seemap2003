@@ -17,10 +17,10 @@ All of the software and data is self-contained and will not require participants
 You will find here:
 * All the presentation materials
   * [01 Intro And Survival Analysis ML](01_Intro_And_Survival_Analysis_ML.pdf)
-  * [03 AI Hardware, Pytorch, and Computer Vision](03_AI_Hardware_PyTorch_And_Computer_Vision.pdf)
+  * [04 AI Hardware, Pytorch, and Computer Vision](04_AI_Hardware_PyTorch_And_Computer_Vision.pdf)
 * The jupyter notebooks
   * [02 Coding Part I](02_seemapld2023_jupyter_notebooks.ipynb)
-  * [04 Coding Part II](04_seemapld2023_survival.ipynb)
+  * [03 Coding Part II](03_seemapld2023_survival.ipynb)
   * [05 Coding Part III](05_seemapld2023_fastai_mnist.ipynb)
 * Setup and management scripts for the workshop machines
 * Hardware setup instructions for the workshop
