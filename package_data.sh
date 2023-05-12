@@ -48,6 +48,7 @@ mkdir -p ../data_nano
 # Copy data files
 #cp -fr ./data/hymenoptera_data_val_small ../data_nano/
 cp -fr ~/.fastai/archive/mnist_png.tgz ../data_nano/
+cp test_fastai_mnist.pt  ../data_nano
 
 #
 # make the tarballs
