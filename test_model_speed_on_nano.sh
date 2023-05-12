@@ -30,4 +30,4 @@ echo
 
 echo "Running model speed test on the nano..."
 #ssh "cuongwilliams@${NANO}" -t /home/cuongwilliams/nano_model_test.sh "${MODEL}"
-ssh "cuongwilliams@$192.168.2.13" -t /home/cuongwilliams/nano_model_test.sh "${MODEL}"
+ssh "cuongwilliams@192.168.2.13" -t /home/cuongwilliams/nano_model_test.sh "${MODEL}"

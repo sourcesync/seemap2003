@@ -32,6 +32,12 @@ sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilli
 sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.15
 sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.16
 
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano1
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano2
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano3
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano4
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano5
+
 # clean up user dir
 set +e
 sudo rm -f $USER_DIR/*.ipynb
