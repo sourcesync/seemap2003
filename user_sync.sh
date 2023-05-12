@@ -26,7 +26,11 @@ else
 fi
 
 # push as authorized user to nanos
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.12
 sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.13
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.14
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.15
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.16
 
 # clean up user dir
 set +e
