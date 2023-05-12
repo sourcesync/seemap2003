@@ -20,7 +20,11 @@ if __name__ == '__main__':
     loaders = block.dataloaders( "/home/mnist_png/training")
 
     print("Loading model file", sys.argv[1])
-    pm = torch.load( os.path.join("/home/",sys.argv[1]) )
+    if os.path.exists(sys.argv[1]):
+        pm = torch.load( os.path.join("/home/",sys.argv[1]) )
+    else:
+        #useeful for our automated tests
+        pm = torch.load( "/home/test_fastai_mnist.pt")
 
     print("Starting inference speed test...")
     zt = st = ct = time.time()
