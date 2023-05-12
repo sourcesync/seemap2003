@@ -22,7 +22,7 @@ sudo rm -fr $USER_DIR/.ipynb_checkpoints
 set -e
 
 # copy workshop files and change permissions as needed
-sudo cp ../data_transfer/*.ipynb survival_analysis.py $USER_DIR/
+sudo cp ../data_transfer/*.ipynb survival_analysis.py test_model_speed_on_nano.sh $USER_DIR/
 sudo chmod ugo+r $USER_DIR/*.ipynb $USER_DIR/*.py
 sudo chmod ugo-w $USER_DIR/*.ipynb $USER_DIR/*.py
 sudo cp -fr images $USER_DIR/
@@ -40,9 +40,11 @@ else
     sudo tar zxf ../data_transfer/mnist_png.tgz -C $USER_DIR/.fastai/data/
 fi
 sudo cp -f ../data_transfer/config.ini $USER_DIR/.fastai/
+
 # jupyter config
 sudo mkdir -p $USER_DIR/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/
 sudo cp ../data_transfer/themes.jupyterlab-settings $USER_DIR/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/
+
 # chmods and chowns
 sudo chmod -R ugo+rw $USER_DIR/.fastai
 sudo chown -R $USER $USER_DIR/.fastai
