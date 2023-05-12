@@ -16,8 +16,9 @@ rm -fr ../data_transfer ../data_transfer.tar ../data_transfer.tar.gz
 mkdir -p ../data_transfer
 
 # Copy notebook first clearing output cells
-jupyter nbconvert --clear-output --to notebook --output=../data_transfer/02_seemapld2023_survival.ipynb 02_seemapld2023_survival.ipynb
-jupyter nbconvert --clear-output --to notebook --output=../data_transfer/04_seemapld2023_fastai_mnist.ipynb 04_seemapld2023_fastai_mnist.ipynb
+jupyter nbconvert --clear-output --to notebook --output=../data_transfer/02_seemapld2023_jupyter_notebooks.ipynb 02_seemapld2023_jupyter_notebooks.ipynb
+jupyter nbconvert --clear-output --to notebook --output=../data_transfer/03_seemapld2023_survival.ipynb 03_seemapld2023_survival.ipynb
+jupyter nbconvert --clear-output --to notebook --output=../data_transfer/05_seemapld2023_fastai_mnist.ipynb 05_seemapld2023_fastai_mnist.ipynb
 #cp 02_seemapld2023_survival.ipynb ../data_transfer/
 #cp 04_seemapld2023_fastai_mnist.ipynb ../data_transfer/
 
