@@ -15,7 +15,7 @@ fi
 
 if [ -z "${NANO}" ]
 then
-    NUM=$(awk -v min=5 -v max=10 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
+    NUM=$(awk -v min=1 -v max=5 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
     NANO="nano${NUM}"
     echo "Randomly choosing the nano called ${NANO}"
 else
