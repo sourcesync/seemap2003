@@ -40,6 +40,8 @@ do
     if [ -d "$USER_DIR" ]
     then
         echo "found $USER_DIR, perform user setup..."
-        ./user_sync.sh $USER $USER_DIR
+        sudo ./user_sync.sh $USER $USER_DIR
     fi
 done
+
+echo "Done."

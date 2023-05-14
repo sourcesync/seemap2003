@@ -11,6 +11,33 @@ set -x
 USER=$1
 USER_DIR=$2
 
+
+# require sudo at this pint
+sudo echo "Script requires sudo..."
+
+# ssh key setup as needed
+#sudo ls "$USER_DIR/.ssh"
+if [ -f "$USER_DIR/.ssh/id_rsa.pub" ]
+then
+	echo "Found ssh pub key"
+else
+	echo "Did not find ssh pub key for $USER"
+	sudo --user $USER ssh-keygen
+fi
+
+# push as authorized user to nanos
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.12
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.13
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.14
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.15
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@192.168.2.16
+
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano1
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano2
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano3
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano4
+sudo --user $USER --set-home ssh-copy-id -i $USER_DIR/.ssh/id_rsa.pub cuongwilliams@nano5
+
 # clean up user dir
 set +e
 sudo rm -f $USER_DIR/*.ipynb

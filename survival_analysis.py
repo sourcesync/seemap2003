@@ -60,9 +60,9 @@ def get_cancer_death_data():
     labeled_df = df.copy()
     labeled_df.columns = [ 'MKI67', 'EGFR', 'PGR', 'ERBB2', 'hormone trtmt', 'radiothrpy', 'chemothrpy', 'ER-pos', 'age', 'days', 'died', 'ID' ]
     return labeled_df
+ 
 
-
-def transform_data():
+def transform_data(valid_frac=0.2,test_frac=0.2):
     '''Transform the data suitable for modeling.'''
     
     global df_test, df_train, df_valid
@@ -78,10 +78,14 @@ def transform_data():
     df = labeled_df
     
     _ranseed()
-    df_test = df.sample(frac=0.2)
-    df_train = df.drop(df_test.index)
-    df_val = df.sample(frac=0.2)
-    df_train = df.drop(df_val.index)
+    
+    # compute the test split
+    df_test = df.sample( int(test_frac*df.shape[0]) )
+    df_train = df.drop( df_test.index )
+    
+    # compute the valid split
+    df_val = df.sample( int(test_frac*df.shape[0]))
+    df_train = df.drop( df_val.index)
     
     #cols_standardize = ['x0', 'x1', 'x2', 'x3', 'x8']
     #cols_leave = ['x4', 'x5', 'x6', 'x7']
@@ -169,7 +173,7 @@ def train_model():
     _ = log.plot()
     
     
-def predict(patients):
+def predict(patients, step=False):
     '''Uses trained model to predict outcome on patients in the test set.'''
     
     global x_test, df_test, model, surv
@@ -184,17 +188,18 @@ def predict(patients):
                 break
     
     # show step function version of survival function
-    #surv = model.predict_surv_df(x_test)
-    #surv.iloc[:, :2].plot(drawstyle='steps-post')
-    #plt.ylabel('S(t | x)')
-    #_ = plt.xlabel('Time')
-    
-    # show smoothed version of survival function
-    surv = model.interpolate(10).predict_surv_df(x_test)
-    surv.iloc[:, idxs].plot(drawstyle='steps-post')
-    plt.ylabel('S(t | x)')
-    plt.gca().legend(labels=filter_pids)
-    _ = plt.xlabel('Time')
+    if step:
+        surv = model.predict_surv_df(x_test)
+        surv.iloc[:, :2].plot(drawstyle='steps-post')
+        plt.ylabel('S(t | x)')
+        _ = plt.xlabel('Time')
+    else:
+        # show smoothed version of survival function
+        surv = model.interpolate(10).predict_surv_df(x_test)
+        surv.iloc[:, idxs].plot(drawstyle='steps-post')
+        plt.ylabel('S(t | x)')
+        plt.gca().legend(labels=filter_pids)
+        _ = plt.xlabel('Time')
     
     
 def predict_model_concordance_index():

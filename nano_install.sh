@@ -12,6 +12,8 @@ set -x
 # docker containers
 #
 
+set +e
+
 #docker pull  nvcr.io/nvidia/l4t-pytorch:r32.7.1-pth1.10-py3
 docker pull dustynv/l4t-pytorch:r35.1.0-pth1.13-py3
 
@@ -26,6 +28,8 @@ sudo apt-get install libcanberra-gtk-module
 #
 
 ./dockerbuild.sh
+
+set -e
 
 #
 # copy model testing files
@@ -50,5 +54,6 @@ fi
 cp -f nano_model_test_mnist.py ~/
 cp -f nano_start.sh ~/
 cp -f nano_model_test.sh ~/
+cp -f ../data_nano/test_fastai_mnist.pt ~/
 
 echo "Done."
