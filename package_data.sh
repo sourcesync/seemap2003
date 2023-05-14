@@ -24,6 +24,7 @@ jupyter nbconvert --clear-output --to notebook --output=../data_transfer/05_seem
 
 # Copy workspace data files
 cp -fr ./data ../data_transfer/
+cp -fr ./images ../data_transfer/
 
 # Copy torch cache (models)
 mkdir -p ../data_transfer/.cache/torch/hub/checkpoints
