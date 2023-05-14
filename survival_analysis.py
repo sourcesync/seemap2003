@@ -62,9 +62,12 @@ def get_cancer_death_data():
     return labeled_df
  
 
-def transform_data(valid_frac=0.2,test_frac=0.2):
+def transform_data(valid_frac=0.15,test_frac=0.15):
     '''Transform the data suitable for modeling.'''
     
+    if (valid_frac<0) or (valid_frac>0.5) or (test_frac<0) or (test_frac>0.5):
+        print("Invalid values")
+        
     global df_test, df_train, df_valid
     global train, val
     global durations_test, events_test
@@ -74,21 +77,26 @@ def transform_data(valid_frac=0.2,test_frac=0.2):
     df = metabric.read_df()
     df['patient_id'] = df.apply( lambda row: "patient_%d" % int(row.name), axis=1 )
     labeled_df = df.copy()
-    labeled_df.columns = [ 'MKI67', 'EGFR', 'PGR', 'ERBB2', 'hormone trtmt', 'radiothrpy', 'chemothrpy', 'ER-pos', 'age', 'days', 'died', 'ID' ]
+    labeled_df.columns = [ 'MKI67', 'EGFR', 'PGR', 'ERBB2', 'hormone trtmt', \
+                          'radiothrpy', 'chemothrpy', 'ER-pos', 'age', 'days', 'died', 'ID' ]
     df = labeled_df
     
     _ranseed()
     
     # compute the test split
-    df_test = df.sample( int(test_frac*df.shape[0]) )
-    df_train = df.drop( df_test.index )
+    num_test = int(test_frac*df.shape[0])
+    df_test = df.sample( num_test )
+    df_whats_left = df.drop( df_test.index )
     
     # compute the valid split
-    df_val = df.sample( int(test_frac*df.shape[0]))
-    df_train = df.drop( df_val.index)
+    num_valid = int(valid_frac*df.shape[0])
+    #df_val = df.sample( int(test_frac*df.shape[0]))
+    df_val = df_whats_left.sample( num_valid )
+    df_train = df_whats_left.drop( df_val.index)
     
-    #cols_standardize = ['x0', 'x1', 'x2', 'x3', 'x8']
-    #cols_leave = ['x4', 'x5', 'x6', 'x7']
+    print("Spliting the data into %.1f percent training, %.1f percent validation, %.1f percent test" % \
+          ( (1.0-valid_frac-test_frac)*100.0, valid_frac*100, test_frac*100) )
+    
     cols_standardize = ['MKI67', 'EGFR', 'PGR', 'ERBB2', 'age']
     cols_leave = ['hormone trtmt', 'radiothrpy', 'chemothrpy', 'ER-pos']
 
@@ -170,10 +178,11 @@ def train_model():
     callbacks = [tt.cb.EarlyStopping()]
     
     log = model.fit(x_train, y_train, batch_size, epochs, callbacks, val_data=val)
-    _ = log.plot()
+    ax = log.plot()
+    ax.set_xlabel("epochs")
     
     
-def predict(patients, step=False):
+def predict_survival(patients, step=False, days=None):
     '''Uses trained model to predict outcome on patients in the test set.'''
     
     global x_test, df_test, model, surv
@@ -192,12 +201,16 @@ def predict(patients, step=False):
         surv = model.predict_surv_df(x_test)
         surv.iloc[:, :2].plot(drawstyle='steps-post')
         plt.ylabel('S(t | x)')
+        if days:
+            plt.xlim(days)
         _ = plt.xlabel('Time')
     else:
         # show smoothed version of survival function
         surv = model.interpolate(10).predict_surv_df(x_test)
         surv.iloc[:, idxs].plot(drawstyle='steps-post')
         plt.ylabel('S(t | x)')
+        if days:
+            plt.xlim(days)
         plt.gca().legend(labels=filter_pids)
         _ = plt.xlabel('Time')
     
