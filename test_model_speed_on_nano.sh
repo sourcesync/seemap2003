@@ -35,6 +35,8 @@ scp "${UNIQUE}" "cuongwilliams@${NANO}:/home/cuongwilliams/"
 echo
 
 echo "mini: Launching model speed test program on ${NANO}..."
+echo
 ssh "cuongwilliams@${NANO}" -t /home/cuongwilliams/nano_model_test.sh "${UNIQUE}"
+echo "mini: Done"
 echo
 
