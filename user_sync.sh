@@ -49,6 +49,8 @@ sudo rm -fr $USER_DIR/.ipynb_checkpoints
 set -e
 
 # copy workshop files and change permissions as needed
+sudo cp ../data_transfer/test_model_speed_on_nano.sh ./
+sudo chmod ugo+x test_model_speed_on_nano.sh
 sudo cp ../data_transfer/*.ipynb survival_analysis.py test_model_speed_on_nano.sh $USER_DIR/
 sudo chmod ugo+r $USER_DIR/*.ipynb $USER_DIR/*.py
 sudo chmod ugo-w $USER_DIR/*.ipynb $USER_DIR/*.py

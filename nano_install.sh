@@ -37,23 +37,24 @@ set -e
 
 # look for nano blob
 if [ -d "../data_nano" ]; then
-	echo "Found ../data_nano"
+        echo "Found ../data_nano"
 else
-	echo "Could not find ../data_nano"
-	exit 1
+        echo "Could not find ../data_nano"
+        exit 1
 fi
 
 # unpack mnist_png files
 if [ -d "$HOME/mnist_png" ]; then
-    	echo "Found mnist_png dir - skipping the unpack, assuming it was already completed"
+        echo "Found mnist_png dir - skipping the unpack, assuming it was already completed"
 else
-	echo "Did not find ~/mnist_png"
-    	sudo tar zxf ../data_nano/mnist_png.tgz -C $HOME
+        echo "Did not find ~/mnist_png"
+        sudo tar zxf ../data_nano/mnist_png.tgz -C $HOME
 fi
 
-cp -f nano_model_test_mnist.py ~/
-cp -f nano_start.sh ~/
-cp -f nano_model_test.sh ~/
+cp -f ../data_nano/nano_model_test_mnist.py ~/
+cp -f ../data_nano/nano_model_test.sh ~/
+cp -f ../data_nano/nano_start.sh ~/
 cp -f ../data_nano/test_fastai_mnist.pt ~/
 
 echo "Done."
+

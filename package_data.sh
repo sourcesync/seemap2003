@@ -19,12 +19,12 @@ mkdir -p ../data_transfer
 jupyter nbconvert --clear-output --to notebook --output=../data_transfer/02_seemapld2023_jupyter_notebooks.ipynb 02_seemapld2023_jupyter_notebooks.ipynb
 jupyter nbconvert --clear-output --to notebook --output=../data_transfer/03_seemapld2023_survival.ipynb 03_seemapld2023_survival.ipynb
 jupyter nbconvert --clear-output --to notebook --output=../data_transfer/05_seemapld2023_fastai_mnist.ipynb 05_seemapld2023_fastai_mnist.ipynb
-#cp 02_seemapld2023_survival.ipynb ../data_transfer/
-#cp 04_seemapld2023_fastai_mnist.ipynb ../data_transfer/
 
 # Copy workspace data files
 cp -fr ./data ../data_transfer/
 cp -fr ./images ../data_transfer/
+cp -f test_model_speed_on_nano.sh ../data_transfer
+cp -f user_sync.sh ../data_transfer
 
 # Copy torch cache (models)
 mkdir -p ../data_transfer/.cache/torch/hub/checkpoints
@@ -50,6 +50,10 @@ mkdir -p ../data_nano
 #cp -fr ./data/hymenoptera_data_val_small ../data_nano/
 cp -fr ~/.fastai/archive/mnist_png.tgz ../data_nano/
 cp test_fastai_mnist.pt  ../data_nano
+cp nano_model_test_mnist.py ../data_nano
+cp nano_model_test.sh ../data_nano
+cp nano_start.sh ../data_nano
+cp nano_install.sh ../data_nano
 
 #
 # make the tarballs

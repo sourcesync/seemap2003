@@ -8,6 +8,11 @@ if [ -f "${MODEL}" ]
 then
     echo "Found your model ${MODEL}"
     echo
+    # lets copy to a unique name
+    UNIQUE="${USER}.pt"
+    cp "${MODEL}" "${HOME}/${UNIQUE}"
+    echo "mini: Copied model to unique name ${UNIQUE}"
+    echo
 else
     echo "ERROR: Could not find your model ${MODEL}"
     exit 1
@@ -18,17 +23,18 @@ if [ -z "${NANO}" ]
 then
     NUM=$(awk -v min=1 -v max=5 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
     NANO="nano${NUM}"
-    echo "Randomly choosing the nano called ${NANO}"
+    echo "mini: Randomly choosing the nano called ${NANO}"
     echo
 else
-    echo "Using the nano called ${NANO}"
+    echo "mini: Using the nano called ${NANO}"
     echo
 fi
 
-echo "Copying your model to nano..."
-scp "${MODEL}" "cuongwilliams@${NANO}:/home/cuongwilliams/"
+echo "mini: Copying your model to ${NANO}..."
+scp "${UNIQUE}" "cuongwilliams@${NANO}:/home/cuongwilliams/"
 echo
 
-echo "Launch model speed test program..."
-ssh "cuongwilliams@${NANO}" -t /home/cuongwilliams/nano_model_test.sh "${MODEL}"
+echo "mini: Launching model speed test program on ${NANO}..."
+ssh "cuongwilliams@${NANO}" -t /home/cuongwilliams/nano_model_test.sh "${UNIQUE}"
 echo
+
