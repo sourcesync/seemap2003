@@ -1,49 +1,38 @@
 import os
 import sys
 import time
+import platform
 
-print("Importing ml packages...")
+print("%s: Importing ml packages..." % platform.node())
+print("")
 from fastai.vision.all import *
 import torch
 from torchvision import datasets, models, transforms
 
+TEST_MODE=False
 
 if __name__ == '__main__':
 
-    print("Preparing images...") 
+    print("%s: Preparing images..." % platform.node())
+    print("")
     block = DataBlock(
         blocks=(ImageBlock, CategoryBlock),
         get_items=get_image_files,
         splitter=RandomSplitter(valid_pct=0.2, seed=42),
         get_y=parent_label)
 
-    loaders = block.dataloaders( "../data_nano/mnist_png/training")
-
-    model = torch.load("../data_nano/fastai_mnist.pt") #seemap2023_ft.pt")
-    print(type(model))
-
-    for obj in model.state_dict():
-        print(obj)
-
-    b = loaders.one_batch()
-    print(len(b))
-    print( type(b[0]), b[0].shape)
-    print( type(b[1]), b[1].shape)
-    print( b[1][0] )
-    pm = model
-    o = pm(b[0])
-    print( type(o), o.shape)
-    print(o[0])
     loaders = block.dataloaders( "/home/mnist_png/training")
 
-    print("Loading model file", sys.argv[1])
-    if os.path.exists(sys.argv[1]):
+    print("%s: Loading model file" % platform.node(), sys.argv[1])
+    print("")
+    if os.path.exists(sys.argv[1]) or TEST_MODE:
         pm = torch.load( os.path.join("/home/",sys.argv[1]) )
     else:
-        #useeful for our automated tests
+        #useful for our automated tests
         pm = torch.load( "/home/test_fastai_mnist.pt")
 
-    print("Starting inference speed test...")
+    print("%s: Starting inference speed test..." % platform.node())
+    print("")
     zt = st = ct = time.time()
     total_predictions = 0
 
@@ -59,10 +48,12 @@ if __name__ == '__main__':
         # emit rate every few seconds
         ct = time.time()
         if ct-st>3:
-            print("prediction rate=", total_predictions/(ct-st) )
+            print("%s: Inference/Pediction rate=" % platform.node(), total_predictions/(ct-st) )
 
             # reset and do again...
             st = time.time()
             total_predictions = 0
 
-    print("Timing test done.")
+    print("%s: Timing test done." % platform.node())
+
+
