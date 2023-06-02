@@ -1,14 +1,14 @@
 # Introduction
 
-Welcome to the code and presentation materials repository for the practical ML tutorial for SEEEMAPL 2023.  
+Welcome to the code and presentation materials repository for the practical ML tutorial for SEEEMAPLD 2023.  
 
-The workshop will comprise dovetailing presentations and interactive coding sessions.
+The workshop comprises dovetailing presentations and interactive coding sessions via jupyter notebooks.
 
-Participants must come to the tutorial session with a laptop with a browser if they wish to participate in the interactive coding essions.  No installation of software is required.
+Participants come to the tutorial session with a laptop and browser if they wish to participate in the interactive coding essions.  No installation of software is required.
 
 When attendees arrive they will be told to connect to the workshop WIFI router and browse to an internal server machine which hosts interactive python notebooks.
 
-The workshop instructor will lead them through the coding in the interacitve notebooks, so no prior ML expereience will be required.
+The workshop instructor will lead them through the coding sessions, so no prior ML expereience will be required.
 
 All of the software and data is self-contained and will not require participants to connect to the public internet.
 
@@ -24,7 +24,6 @@ You will find here:
   * [05 Coding Part III](05_seemapld2023_fastai_mnist.ipynb)
 * Setup and management scripts for the workshop machines
 * Hardware setup instructions for the workshop
-
 
 # Requirements
 
